@@ -1,0 +1,40 @@
+<div class="ac">{$COUNT}</div>
+
+<table class="w100p">
+	<tr>
+		<td class="smallText w20p">
+			{if $LINKS.previous_button.href}
+			<a rel="prev" href="{$LINKS.previous_button.href}"
+			   title="{$LINKS.previous_button.title}">{$LINKS.previous_button.name}</a>
+			{/if}
+		</td>
+
+		<td class="smallText ac">
+
+			{if $LINKS.first_page}
+				[<a href="{$LINKS.first_page.href}" title="{$LINKS.first_page.title}">{$LINKS.first_page.name}</a>]...
+			{/if}
+
+			{foreach from=$LINKS.pages item=page}
+
+			{if $page.href}
+				<a href="{$page.href}" title="{$page.title}">{$page.name}</a>
+			{else}
+				<b><u>{$page.name}</u></b>
+			{/if}
+
+			{/foreach}
+
+			{if $LINKS.last_page}
+				...[<a href="{$LINKS.last_page.href}" title="{$LINKS.last_page.title}">{$LINKS.last_page.name}</a>]
+			{/if}
+		</td>
+
+		<td class="smallText ar w20p">
+			{if $LINKS.next_button.href}
+				<a rel="next" href="{$LINKS.next_button.href}" title="{$LINKS.next_button.title}">{$LINKS.next_button.name}</a>
+			{/if}
+		</td>
+
+	</tr>
+</table>

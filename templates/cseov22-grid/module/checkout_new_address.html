@@ -1,0 +1,50 @@
+{config_load file="lang/$language/lang_$language.conf" section="checkout_new_address"}
+<p>{#text_new_address#}</p>
+<div style="display:block;width:100%; text-align:right" class="inputRequirement fs85">{#text_must#}</div>
+
+<fieldset class="account">
+	<legend><strong>{#title_new_address#}</strong></legend>
+	{if $gender=='1'}
+		<dl>
+			<dt class="w40p">{#text_gender#}</dt><dd>{$INPUT_MALE} | {$INPUT_FEMALE}</dd>
+		</dl>
+	{/if}
+	<dl>
+		<dt class="w40p">{#text_firstname#}</dt><dd>{$INPUT_FIRSTNAME}</dd>
+	</dl>
+	<dl>
+		<dt class="w40p">{#text_lastname#}</dt><dd>{$INPUT_LASTNAME}</dt>
+	</dl>
+	{if $company=='1'}
+		<dl>
+			<dt class="w40p">{#text_company#}</dt><dd>{$INPUT_COMPANY}</dt>
+		</dl>
+	{/if}
+	<dl>
+		<dt class="w40p">{#text_street#}</dt><dd>{$INPUT_STREET}</dt>
+	</dl>
+	{if $suburb=='1'}
+		<dl>
+			<dt class="w40p">{#text_suburb#}</dt><dd>{$INPUT_SUBURB}</dt>
+		</dl>
+	{/if}
+	<dl>
+		<dt class="w40p">{#text_code#}</dt><dd>{$INPUT_CODE}</dt>
+	</dl>
+	<dl>
+		<dt class="w40p">{#text_city#}</dt><dd>{$INPUT_CITY}</dt>
+	</dl>
+	{if $state=='1'}
+		<dl>
+			<dt class="w40p">{#text_state#}</dt><dd{if $state_stat != 1} style="display:none;"{/if} id="checkout_states_row">{$INPUT_STATE}</dt>
+		</dl>
+	{/if}
+	<dl>
+		<dt class="w40p">{#text_country#}</dt><dd class="dropdown">{$SELECT_COUNTRY}</dt>
+	</dl>
+	{if $new=='1'}
+		<dl>
+			<dt class="w40p">&nbsp;</dt><dd>{$CHECKBOX_PRIMARY} {#text_standard#}</dt>
+		</dl>
+	{/if}
+</fieldset>

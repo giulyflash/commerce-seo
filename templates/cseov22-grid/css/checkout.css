@@ -1,0 +1,254 @@
+
+/* Checkout */
+
+
+.checkout_line { background: url(images/img/checkout_line.png) repeat-x; line-height: 12px; }
+
+fieldset.checkout_payment {border: 1px solid #c10202; padding: 8px; margin: 10px}
+
+
+.checkout { text-align: left; width: 95%; }
+.checkout_payment_adress_current { float: left; width: 32%; padding-left: 15px; }
+.checkout_payment_arrow { float: left; width: 23%; text-align: center; }
+.checkout_payment_container { width: 555px; text-align: left; height: 120px; }
+.checkout_payment_continue { margin: 15px 0 0 0; height: 55px; }
+.checkout_payment_info_text { float: left; width: 40%; }
+.checkout_payment_input {margin-top:3px}
+.checkoutBarCurrent, .checkoutBarTo, div.checkoutBarCurrent { margin: 15px 0 10px 0; padding: 0 2px 0 2px; font-size: 11px; }
+.checkout_payment_list {margin-left: 30px}
+
+div.checkout_row {
+clear:both;
+}
+
+div.checkout_title {
+cursor:pointer;
+position:relative;
+color:#FFF;
+padding:4px;
+font-size:1.0em;
+border:1px solid #ccc;
+border-top: 0 none;
+background: #636363;
+background: linear-gradient(#636363, #2A2929);
+}
+
+
+div.checkout_title .right {
+position:absolute;
+right:6px;
+top:3px;
+font-weight:bold;
+}
+
+div.checkout_content {
+color:#000;
+padding:4px;
+border-right:solid 1px #ccc;
+border-left:solid 1px #ccc;
+border-bottom:solid 1px #ccc;
+}
+
+div.checkout_content .inputRequirement select {
+width:190px;
+}
+
+div.checkout_content .virtual {
+text-align:center;
+}
+
+div.checkout_content .left_space {
+padding-left:20px;
+}
+
+div.checkout_shipping_modules, .checkout_shipping_address {
+width:49%;
+float:left;
+clear:left;
+}
+
+div.checkout_payment_modules, .checkout_payment_address {
+width:49%;
+float:right;
+clear:right;
+}
+
+div.checkout_total {
+text-align:right;
+border: 1px solid red; 
+background-color: #f1f1f1;
+padding-right: 5px;
+border-radius: 6px;
+}
+
+#checkout_total table {
+float:right;
+}
+
+div.checkout_spacer {
+height:12px;
+font-size:9px;
+clear:both;
+}
+
+div.checkout_button_left {
+text-align: left;
+width:49%;
+float:left;
+clear:left;
+}
+
+div.checkout_button {
+text-align: right;
+width:49%;
+float:right;
+clear:right;
+}
+
+.radiobox {vertical-align:middle;padding:0px;margin:0px;}
+
+.module_ok, div.checkout_please_wait {
+color:green;
+font-weight:bold;
+}
+
+div.checkout_error {
+color:#FF0000;
+font-weight:bold;
+}
+
+
+.ot_cod_free {line-height: 1.8em}
+.ot_coupon {color:#990000;line-height: 1.8em}
+.ot_discount {line-height: 1.8em}
+.ot_gv {color:#990000;line-height: 1.8em;margin: 3px 0;}
+.ot_loworderfree {line-height: 1.8em}
+.ot_ps_free {line-height: 1.8em}
+.ot_shipping {line-height: 1.8em}
+.ot_subtotal_no_tax {line-height: 1.8em}
+.ot_subtotal {line-height: 1.8em}
+.ot_tax {line-height: 1.8em; font-weight: 700;}
+.ot_total_netto { color: #000;line-height: 1.8em}
+.ot_total {font-weight: 700; font-size: 110%; color:#000;margin-top: 5px;padding: 3px;line-height: 1.8em; border-top: 1px solid #555;}
+
+
+div.agbframe {
+height: 150px;
+overflow: auto;
+padding: 10px;
+width: 98%;
+}
+
+#chkt_shipping_modules, #chkt_payment_modules {
+background: #eeeeee;
+background: linear-gradient(#fdfdfd, #eeeeee);
+}
+.moduleRowSelected {border: 2px solid #3d9128; }
+
+#checkout_products_standart a{text-decoration: underline}
+#checkout_products_standart td{padding-right: 5px;}
+
+/* Checkout END */
+
+/* Cart */
+
+.order_details_sub_ul {display:block; float:left; clear:both; width:100%; margin-left:0;}
+
+#middle ul.order_details, #middle ul.order_details_head { display: block; float: left;clear: both;width:100%; margin-left: 0;}
+
+ul.order_details_head {margin-bottom: 2px;padding-bottom: 2px;}
+
+ul.order_details li, ul.order_details_head li {float:left;overflow:hidden; padding: 4px 2px; list-style:none}
+
+ul.order_details {border-bottom: 1px solid #ccc}
+
+.order_details_article { width: 145px; float: left; }
+.order_details_article_header { width: 145px; float: left; }
+.order_details_img { width: 70px; float: left; text-align: center; margin: 5px 0 0 0 }
+.order_details_img_header { width: 70px; float: left; text-align: center; margin: 0 0 0 0; }
+.order_details_qty { width: 50px; float: left; text-align: center; margin-top: 5px }
+.order_details_qty_header { width: 50px; float: left; text-align: center;}
+.order_details_remove { width: 50px; float: left; text-align: center; margin-top: 15px }
+.order_details_remove_header { width: 50px; float: left; }
+.order_details_shippingtime { width: 70px; float: left; margin-top: 5px }
+.order_details_shippingtime_header { width: 70px; float: left; }
+.order_details_totalcost { text-align: right; margin: 20px 0 0 0 }
+.order_details_totalcost strong { font-size: 11px; font-weight: bolder }
+.order_details_totalprice_header { width: 100px; float: right; text-align: right; }
+.order_details_singleprice_header { width: 85px; float: left;}
+.order_detais_totalprice { width: 100px; float: right; text-align: right; margin-top: 5px; font-weight: bolder }
+.order_details_singleprice { width: 85px; float: left; margin-top: 5px }
+.markProductOutOfStock { color: red; }
+
+
+/* AMAZON CHECKOUT */
+
+.rm_slide_header {
+ cursor:pointer;
+}
+
+.cba_header {
+ padding:3px;
+ margin: 3px 0;
+ background: #fdfdfd;
+ border: 1px solid #636363;
+ font-weight:bold;
+ 
+}
+
+.accept_box_checkbox {
+ float:left;
+ width: 25px;
+}
+
+.accept_box_text {
+ float:left;
+ padding: 2px;
+
+}
+
+#agbWidget {
+ margin-bottom: 10px;
+}
+
+ .cba_item_qty {
+  font-size: 10px;
+	width: 25px;
+	float: left;
+	clear: left;
+}
+.cba_item_title {
+  font-size: 10px;
+}
+.cba_item_price {
+  font-size: 10px;
+  text-align:right;
+  border-bottom: 1px dotted #000;
+  margin-bottom: 3px;
+}
+.cba_cart_value {
+  text-align: right;
+  font-size:10px;
+  font-weight: bold;
+  margin-bottom:15px;
+}
+.amzAttr { margin-left: 25px }
+
+/* Cart END */
+
+.order_details_sub_ul input[type="text"], .order_details input[type="text"] {width:30px; text-align:center}
+
+#middle .order_details_sub_ul {margin-left: 0}
+
+.left {float:left}
+.right {float:right}
+
+u a, u {color: white;}
+
+.checkout_products div.checkout_content {
+color:#000;
+padding:4px;
+border-right:solid 1px red;
+border-left:solid 1px red;
+border-bottom:solid 1px red;
+}

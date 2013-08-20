@@ -1,0 +1,61 @@
+{config_load file="lang/$language/lang_$language.conf" section="account"}
+{config_load file="lang/$language/lang_$language.conf" section="boxes"}
+<h1>{#heading_account#} {$customer_name}</h1>
+{if $error_message}
+<div class="headerError">{$error_message}</div>
+{/if}
+{if $error}
+<div class="headerError">{$error}</div>
+{/if}
+{#text_welcome#}<br />
+{if $LINK_LOGIN}
+	<br />
+	<ul class="account_ul">
+		<li>
+			<a href="{$LINK_LOGIN}">{#text_login#}</a>
+		</li>
+	</ul><br /><br />
+{else}
+	
+	{if $ACTIVATE_GIFT=='true'}
+		{if $GV_AMOUNT neq ''}
+		<div class="ac">
+			<p><b>{#voucher_balance#}</b> {$GV_AMOUNT}</p>
+			<p><b>{$GV_SEND_TO_FRIEND_LINK}{#box_send_to_friend#}</a></b></p>
+		</div>
+		{/if}
+	{/if}
+	
+	<h2>{#title_account#}</h2>
+	<ul class="account_ul">
+		<li><a href="{$LINK_EDIT}">{#text_edit#}</a></li>
+		<li><a href="{$LINK_ADDRESS}">{#text_address#}</a></li>
+		<li><a href="{$LINK_PASSWORD}">{#text_password#}</a></li>
+		<li><a href="{$LINK_DELETE}">{#text_delete#}</a></li>
+	</ul>
+	<br />
+	<br />
+	<h2>{#title_notification#}</h2>
+	<ul class="account_ul">
+		<li><a href="{$LINK_NEWSLETTER}">{#text_newsletter#}</a></li>
+	</ul>
+	<br />
+	<br />
+	{if $MODULE_products_history}{$MODULE_products_history}<br /><br />{/if}
+	{if $order_content}
+		<h2>{#title_orders#}</h2>
+		<a href="{$LINK_ALL}">
+			{#text_all#}
+		</a>
+		<div style="width:100%; clear:both">
+			{foreach name=aussen item=order_data from=$order_content}
+				<fieldset class="account_history">
+					<legend><a href="{$order_data.ORDER_LINK}">{$order_data.ORDER_DATE}</a>&nbsp;&nbsp;{#order_nr#}{$order_data.ORDER_ID}</legend>
+					{#order_total#}{$order_data.ORDER_TOTAL}<br />
+					{#order_status#}{$order_data.ORDER_STATUS}<br />
+					{$order_data.ORDER_BUTTON}
+				</fieldset>
+			{/foreach}
+		</div>
+	{/if}
+{/if}

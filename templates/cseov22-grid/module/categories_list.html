@@ -1,0 +1,19 @@
+{config_load file="lang/$language/lang_$language.conf" section="boxes"}
+{if $module_content !=''}
+	<h2>{#heading_more_categories#}</h2>
+	<ul id="categorie_list" class="w100p">
+		{foreach name=aussen item=module_data from=$module_content}
+			<li class="fl w48p ac boxcenter border_radius_6">
+				<h4 class="boxTitle"><a href="{$module_data.CATEGORY_LINK}" title="{$module_data.CATEGORY_NAME}">{$module_data.CATEGORY_NAME}</a></h4>
+				{if $module_data.CATEGORY_IMAGE}
+					<a href="{$module_data.CATEGORY_LINK}" title="{$module_data.CATEGORY_NAME}">
+						{$module_data.CATEGORY_IMAGE}
+					</a><br />
+				{/if}
+				{if $module_data.CATEGORY_DESCRIPTION}
+					{$module_data.CATEGORY_DESCRIPTION}
+				{/if}
+			</li>
+		{/foreach}
+	</ul><br class="clear" />
+{/if}

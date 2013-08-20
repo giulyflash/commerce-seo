@@ -1,0 +1,36 @@
+{config_load file="lang/$language/lang_$language.conf" section="index"}
+<div id="page_container">
+	<header>
+		{index_html file='index_top.html' type=top}
+	</header>
+	
+	{index_html file='index_left.html' type=left}
+	{outerContainer}
+		<article>
+			{if $navtrail !=''}
+				<div class="nav_pathway">
+					{$navtrail}
+				</div>
+			{/if}
+			<noscript>
+			<div class="headerError border_radius_6">{#noscript#}</div>
+			</noscript>
+						
+			{$main_content}
+		</article>
+	</div>
+	{index_html file='index_right.html' type=right}
+	<br class="clear" />
+
+</div>
+<footer class="copy fs85">
+	<div class="footerbox">	
+		{index_html file='index_bottom.html' type=bottom}
+	</div>
+	{$copyright}
+</footer>
+{if $BANNER}<br />
+	<div id="banner" class="ac">
+		{$BANNER}
+	</div>
+{/if}

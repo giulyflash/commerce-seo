@@ -1,0 +1,224 @@
+/* --------------------------------------------------------------
+   $Id: stylesheet.css,v 1.1 2010/09/08 10:56:49 akausch Exp $   
+
+   XT-Commerce - community made shopping
+   http://www.xt-commerce.com
+
+   Copyright (c) 2003 XT-Commerce
+   --------------------------------------------------------------
+   based on: 
+   (c) 2000-2001 The Exchange Project  (earlier name of osCommerce)
+   (c) 2002-2003 osCommerce(stylesheet.css,v 1.24 2003/06/02); www.oscommerce.com 
+   (c) 2003	 nextcommerce (stylesheet.css,v 1.12 2003/08/23); www.nextcommerce.org
+
+   Released under the GNU General Public License 
+   --------------------------------------------------------------*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+}
+
+:focus {outline: none;}
+
+table {border-collapse: separate;border-spacing: 0;}
+
+body {
+font-family: Arial;
+font-size: 12px;
+background-color: #dfdfdf;
+color: #666;
+}
+h1 {
+font-weight: 700;
+padding-bottom:0.25em;
+color:#666;
+font-size:1.8em;
+line-height:1.7em;
+text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)
+}
+
+h2 {
+font-weight: 700;
+padding-bottom:0.2em;
+font-size:1.1em;
+line-height:1.2em;
+margin: 20px 0 6px 0;
+text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)
+}
+
+a:link,a:visited,a:active { text-decoration: none; color: #999999 }
+
+
+.menuBoxHeading { background-color: #f1f1f1; }
+
+.menuBoxContent { color: #616060; }
+
+.columnLeft, .columnLeft2 {}
+
+.longDescription { visibility: hidden; display: none; }
+
+.headerBarContent { font-weight: bold; padding: 2px;}
+
+.boxCenter {padding-left:5px; }
+
+
+.outerTable {margin: 0;padding: 10px; border: 1px solid #DADFE0}
+
+ul {margin-left:15px}
+
+input.button, a.button {
+background: #012132;
+background: -moz-linear-gradient(#012132, #0c3144) repeat scroll 0 0 transparent;
+background: -webkit-linear-gradient(#012132, #0c3144) repeat scroll 0 0 transparent;
+background: linear-gradient(#012132, #0c3144) repeat scroll 0 0 transparent;
+border: 1px solid #25303D;
+color:#eeeeee;
+cursor:pointer;
+height: 25px;
+line-height:25px;
+margin: 2px;
+font-family:arial,helvetica,sans-serif;
+font-size:13px;
+font-weight:600;
+padding:0 7px 2px 7px;
+text-align:center !important;
+white-space:nowrap;
+border-radius: 2px;
+text-shadow: 0 0 1px #303A45;
+}
+
+a.button { padding: 5px 4px }
+.button  a:hover{text-decoration: none}
+
+.button:hover {
+background: #177701;
+background: -moz-linear-gradient(#1c9301, #177701) repeat scroll 0 0 transparent;
+background: -webkit-linear-gradient(#1c9301, #177701) repeat scroll 0 0 transparent;
+background: linear-gradient(#1c9301, #177701) repeat scroll 0 0 transparent;
+color: #fff; 
+border: 1px solid #136101
+}
+
+
+select {border:1px solid #677E98; color:#2f2f2f; }
+
+select:focus {background: #FCF5DD}
+
+
+#wrapper {background: #fff; display: block;padding: 0 10px; overflow: hidden}
+
+#inner_wrapper {width: 850px; margin: 0 auto}
+
+#footer {
+background: #ffffff;
+background: -moz-linear-gradient(#ffffff, #eeeeee) repeat scroll 0 0 transparent;
+background: -webkit-linear-gradient(#ffffff, #eeeeee) repeat scroll 0 0 transparent;
+background: linear-gradient(#ffffff, #eeeeee) repeat scroll 0 0 transparent;
+border-radius: 0 0 20px 20px;
+height: 80px
+
+}
+
+.header_links, .header_links a {color:#666}
+
+.columnRight {padding-left: 10px}
+
+.messageStackError, .messageStackWarning, .messageStackSuccess  { background-color: #fcf5dd; border-top: 1px solid #EB5E00; border-bottom: 1px solid #EB5E00; text-align: center;font-weight: 700;padding: 5px 0 }
+
+form { display: inline; }
+
+.menu_titel {
+background: #177701;
+background: -moz-linear-gradient(#1c9301, #177701) repeat scroll 0 0 transparent;
+background: -webkit-linear-gradient(#1c9301, #177701) repeat scroll 0 0 transparent;
+background: linear-gradient(#1c9301, #177701) repeat scroll 0 0 transparent;
+color: #fff; 
+border: 1px solid #136101;
+height: 20px;
+padding: 5px;
+}
+
+.menu_items {border: 1px solid #ccc; padding:3px;text-decoration: none;}
+
+.ok {background: #FCF5DD; color: #666}
+
+fieldset {padding: 10px;margin: 10px 0;}
+
+fieldset.installer {border: 1px solid #ccc; } 
+
+.red, fieldset.red {border: 1px solid #990000}
+
+.green, fieldset.green {border: 1px solid #177701}
+
+fieldset.installer legend { padding: 0 5px; margin-bottom: 5px}
+
+.table_input {border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; background: #FCF5DD; margin-bottom: 10px}
+
+hr {color:#ccc;background: #ccc;height: 1px;width: 100%;display: block}
+
+#passwordStrength{height:10px;display:block;float:left;}
+
+.strength0{width:250px;background:#cccccc;}
+
+.strength1{width:50px;background:#ff0000;}
+
+.strength2{width:100px;background:#ff5f5f;}
+
+.strength3{width:150px;background:#56e500;}
+
+.strength4{background:#4dcd00;width:200px;}
+
+.strength5 {background:#399800;width:250px;}
+
+
+
+header {
+background: #ffffff;
+background: -moz-linear-gradient(#ffffff, #eeeeee) repeat scroll 0 0 transparent;
+background: -webkit-linear-gradient(#ffffff, #eeeeee) repeat scroll 0 0 transparent;
+background: linear-gradient(#ffffff, #eeeeee) repeat scroll 0 0 transparent;
+border-radius: 20px 20px 0 0;
+
+}
+.header, .logo {
+height: 1.6em;
+margin: 0 auto;
+color: #999;
+font-size: 1.6em;
+font-weight: 700;
+font-family: arial;
+text-align: center;
+text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)
+}
+.logo {height: 85px;}
+.header a {color: #666}
+.header a:hover {color: #999; text-decoration: underline;}
+
+#main_content {
+margin: 15px auto;
+padding: 0;
+font-size: 13px;
+border: 2px solid #999;
+border-radius: 20px;
+width: 850px;
+background: #ffffff;
+background: -moz-linear-gradient(#ffffff, #dddddd) repeat scroll 0 0 transparent;
+background: -webkit-linear-gradient(#ffffff, #dddddd) repeat scroll 0 0 transparent;
+background: linear-gradient(#ffffff, #dddddd) repeat scroll 0 0 transparent;
+box-shadow: 2px 3px 10px #999999;
+}

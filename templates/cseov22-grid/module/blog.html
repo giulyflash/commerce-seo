@@ -1,0 +1,40 @@
+{config_load file="lang/$language/lang_$language.conf" section="blog"}
+{if $BLOG == 'true'}
+	{if $blog_items}
+		<div class="product_info_name"><h1>{$cat_name}</h1></div>
+		{foreach name=aussen item=module_data from=$blog_items}
+			<div class="product_pad">
+				<div class="datum">
+					<p>
+						<span class="monat">{$module_data.monat}</span>
+						<span class="tag">{$module_data.tag}</span>
+						<span class="jahr">{$module_data.jahr}</span>
+					</p>
+				</div>
+				<h2>
+					<a href="{$module_data.blog_link}">{$module_data.name}</a>
+				</h2>
+				{$module_data.description}
+			</div>
+			<br />		
+		{/foreach}
+	{else}
+		Derzeit sind noch keine Beitr&auml;ge vorhanden.
+	{/if}
+{elseif $START}
+	<div class="product_info_name"><h1>Blog</h1></div>
+	<div class="product_pad">{$TEXT}</div>
+{else}
+	<div class="datum">
+		<p>
+			<span class="monat">{$MONAT}</span>
+			<span class="tag">{$TAG}</span>
+			<span class="jahr">{$JAHR}</span>
+		</p>
+	</div>
+	{if !$START}
+	    <h1 class="blog_name">{$NAME}</h1>
+    {/if}
+	<p>{$TEXT}</p>
+	<div id="socialshareprivacy"></div>
+{/if}

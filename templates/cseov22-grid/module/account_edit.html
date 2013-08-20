@@ -1,0 +1,43 @@
+{config_load file="lang/$language/lang_$language.conf" section="account_edit"}
+{$FORM_ACTION}
+{if $error}
+	<div class="headerError">{$error}</div>
+{/if}
+<h1>{#heading_account#}</h1>
+<div style="display:block;width:100%; text-align:right" class="inputRequirement">{#text_must#}</div>
+<fieldset class="account">
+	<legend><strong>{#adresse#}</strong></legend>
+	<div style="float:left">
+		<dl>
+			{if $csID}<dd>{#csID#}</dd>{/if}
+			{if $gender=='1'}<dd>{#text_gender#}</dd>{/if}
+			<dd>{#text_firstname#}</dd>
+			<dd>{#text_lastname#}</dd>
+			{if $birthdate=='1'}<dd>{#text_birthdate#}</dd>{/if}
+			<dd>{#text_email#}</dd>
+			<dd>{#text_tel#}</dd>
+			<dd>{#text_fax#}</dd>
+			{if $vat=='1'}<dd>{#text_ustid#}</dd>{/if}
+		</dl>
+	</div>
+	<div style="float:right">
+		<dl>
+			{if $csID}<dd><b>{$csID}</b></dd>{/if}
+			{if $gender=='1'}<dd>{$INPUT_MALE} | {$INPUT_FEMALE}</dd>{/if}
+			<dd class="inputRequirement">{$INPUT_FIRSTNAME}</dd>
+			<dd class="inputRequirement">{$INPUT_LASTNAME}</dd>
+			{if $birthdate=='1'}<dd class="inputRequirement">{$INPUT_DOB}</dd>{/if}
+			<dd class="inputRequirement">{$INPUT_EMAIL}</dd>
+			<dd class="inputRequirement">{$INPUT_TEL}</dd>
+			<dd class="inputRequirement">{$INPUT_FAX}</dd>
+			{if $vat=='1'}<dd class="inputRequirement">{$INPUT_VAT}</dd>{/if}
+		</dl>
+	</div>
+</fieldset>
+<div style="clear:left"></div>
+<br />
+<br /> 
+<div style="float:left">{$BUTTON_BACK}</div>
+<div style="float:right">{$BUTTON_SUBMIT}</div>
+
+{$FORM_END}

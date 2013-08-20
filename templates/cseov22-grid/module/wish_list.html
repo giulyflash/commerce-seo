@@ -1,0 +1,23 @@
+{config_load file="lang/$language/lang_$language.conf" section="shopping_cart"} 
+<h1>{#heading_wish_list#}</h1>
+{if $info_message!=''}
+	<div class="headerInfo">{$info_message}</div><br />
+{/if}
+
+{if $cart_empty}
+	{#text_empty_wishlist#}
+	<div align="right">{$BUTTON_CONTINUE}</div>
+{else}
+		{$HIDDEN_OPTIONS}
+  		{$MODULE_order_details}
+		<div style="width:100%">
+			<div style="width:60%; float:left">
+				{$BUTTON_BACK} {$WISH_PRINT}
+			</div>
+			<div style="width:30%; float:right" align="right">
+				{$BUTTON_CHECKOUT}
+			</div>
+			<br style="clear:both" />
+		</div>
+<div style="display:block;width:100%; text-align:right" class="inputRequirement">{#text_must#}{$SHIPPING_INFO}</div>	
+{/if}

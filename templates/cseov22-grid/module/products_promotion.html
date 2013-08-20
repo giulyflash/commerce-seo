@@ -1,0 +1,23 @@
+{config_load file="lang/$language/lang_$language.conf" section="products_promotion"} 
+{if $promotion_modul|@sizeof > 1}
+	 <div class="callbacks_container">
+		<ul class="rslides" id="slider1">
+		{foreach name=promo item=pp_data from=$promotion_modul}
+			<li>
+			<a href="{$pp_data.PRODUCT_LINK}"><img width="810" height="340" src="{$pp_data.PRODUCT_IMAGE}" title="{$pp_data.PRODUCT_NAME}" alt="{$pp_data.PRODUCT_NAME}" /></a>
+				{if $pp_data.PRODUCT_DESCRIPTION !='' || $pp_data.PRODUCT_NAME !=''}
+					<p class="caption">
+						{if $pp_data.PRODUCT_NAME !=''}
+							<a title="{$pp_data.PRODUCT_NAME}" href="{$pp_data.PRODUCT_LINK}">{$pp_data.PRODUCT_NAME}</a>
+						{/if}
+						{if $pp_data.PRODUCT_DESCRIPTION != ''}
+							<br />{$pp_data.PRODUCT_DESCRIPTION}
+						{/if}
+					 </p>
+				{/if}
+			
+			</li>
+		{/foreach}
+		</ul>
+	</div>
+{/if}

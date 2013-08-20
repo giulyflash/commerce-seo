@@ -1,0 +1,9 @@
+{if $CONTENT_HEADING}<h1>{$CONTENT_HEADING}</h1>{/if}
+{if $file}
+    {$file}
+{else}
+	<div align="right">{$PDF_LINK} {$PRINT_LINK}</div>
+    {$CONTENT_BODY}
+{/if}<br /><br />
+<div align="right">{$BUTTON_CONTINUE}</div>
+
