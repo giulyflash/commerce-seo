@@ -1,0 +1,124 @@
+{config_load file="lang/$language/lang_$language.conf" section="create_account"}
+{if $error}
+	<div class="headerError">{$error}</div>
+{/if}
+<h2>{#heading_guest_order#}</h2>
+{$FORM_ACTION}
+	<div style="display:block;width:100%; text-align:right" class="inputRequirement">{#text_must#}</div>
+	
+	<fieldset class="account">
+		<legend><strong>{#title_personal#}</strong></legend>
+		{if $gender=='1'}
+			<dl>
+				<dt class="w200">{#text_gender#}</dt>
+				<dd>{$INPUT_MALE} | {$INPUT_FEMALE}</dd>
+			</dl>
+		{/if}
+		<dl>
+			<dt class="w200">{#text_firstname#}</dt>
+			<dd>{$INPUT_FIRSTNAME}</dd>
+		</dl>
+		<dl>
+			<dt class="w200">{#text_lastname#}</dt>
+			<dd>{$INPUT_LASTNAME}</dd>
+		</dl>
+		{if $birthdate=='1'}
+			<dl>
+				<dt class="w200">{#text_birthdate#}</dt>
+				<dd>{$INPUT_DOB}</dd>
+			</dl>
+		{/if}
+		<dl>
+			<dt class="w200">{#text_email#}</dt>
+			<dd>{$INPUT_EMAIL}</dd>
+		</dl>
+	</fieldset>
+	
+	{if $company=='1'}
+		<fieldset class="account">
+			<legend><strong>{#title_company#}</strong></legend>
+			<dl>
+				<dt class="w200">{#text_company#}</dt>
+				<dd>{$INPUT_COMPANY}</dd>
+			</dl>
+			{if $vat=='1'}
+				<dl>
+					<dt class="w200">{#text_ustid#}</dt>
+					<dd>{$INPUT_VAT}</dd>
+				</dl>
+			{/if}
+		</fieldset>		
+	{/if}
+
+	<fieldset class="account">
+		<legend><strong>{#title_address#}</strong></legend>
+		<dl>
+			<dt class="w200">{#text_street#}</dt>
+			<dd>{$INPUT_STREET}{$INPUT_STREET_NUM}</dd>
+		</dl>
+		{if $suburb=='1'}
+			<dl>
+				<dt class="w200">{#text_suburb#}</dt>
+				<dd>{$INPUT_SUBURB}</dd>
+			</dl>
+		{/if}
+		<dl>
+			<dt class="w200">{#text_code_city#}</dt>
+			<dd>{$INPUT_CODE} {$INPUT_CITY}</dd>
+		</dl>
+		{if $SELECT_COUNTRY_ENABLE != 'false'}
+		<br />
+		<dl>
+			<dt class="w200">{#text_country#}</dt>
+			<dd>{$SELECT_COUNTRY}</dd>
+		</dl>
+		{else}
+			{$SELECT_COUNTRY}
+		{/if}
+		{if $state=='1'}
+		<br />
+			<dl>
+				<dt class="w200">{#text_state#}</dt>
+				<dd><span id="state">{$INPUT_STATE}</span></dd>
+			</dl>
+			{$SELECT_COUNTRY_JS}
+		{/if}
+	</fieldset>
+
+	<fieldset class="account">
+		<legend><strong>{#title_contact#}</strong></legend>
+		<dl>
+			<dt class="w200">{#text_tel#}</dt>
+			<dd>{$INPUT_TEL}</dd>
+		</dl>
+		<dl>
+			<dt class="w200">{#text_fax#}</dt>
+			<dd>{$INPUT_FAX}</dd>
+		</dl>
+	</fieldset>
+	
+	<fieldset class="account">
+		<legend><strong >{#title_newsletter#}</strong></legend>
+		{$CHECKBOX_NEWSLETTER} {#receive_newsletter#}
+	</fieldset>
+
+{if $TRUSTED_DSG != 'false'}
+	<fieldset class="account">
+		<legend><strong>{#title_datensg#}</strong></legend>
+		<div class="textarea">{$DSG}</div>
+		<div class="red border_radius_6">
+			{$DATENSG_CHECKBOX} {#text_accept_datensg#}{$BUTTON_PRINT}
+		</div><br />
+		<script type="text/javascript">
+			{literal}
+			jQuery(document).ready(function(){ 
+				jQuery('.red input').click(function () {
+					jQuery('.red').toggleClass("green");
+				});
+			});
+			{/literal}
+		</script>
+	</fieldset><br />
+{/if}
+	<div align="right">{$BUTTON_SUBMIT}</div>
+{$FORM_END}

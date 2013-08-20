@@ -1,0 +1,86 @@
+{config_load file="lang/$language/lang_$language.conf" section="checkout_success"}
+<h2>{#heading_success#}</h2>
+<div align="center">	
+    <div class="checkout">
+        <div align="center">
+            <div style="width:100%">
+                <div style="float:left; width:24.9%;">
+                    <div class="checkout_line">&nbsp;</div>
+                    <div class="checkoutBarTo">{#text_shipping_info#}</div>
+                </div>
+                <div style="float:left; width:24.9%">
+                    <div class="checkout_line">&nbsp;</div>
+                    <div class="checkoutBarTo">{#text_payment_info#}</div>
+                </div>
+                <div style="float:left; width:24.9%">
+                    <div class="checkout_line">&nbsp;</div>
+                    <div class="checkoutBarTo">{#text_confirm#}</div>
+                </div>
+                <div style="float:left; width:24.9%">
+                    <div class="checkout_line" align="center"><img src="{$tpl_path}img/checkout_bullet.gif" alt="Bullet" /></div>
+                    <div class="checkoutBarCurrent">{#text_finished#}</div>
+                </div>
+                <br style="clear:both" />
+            </div>
+        </div>
+        <br />
+        <div align="center">
+            <hr />
+			{$MODULE_trusted_shops}
+			<hr />
+        </div>
+		{if $INFOTEXT_1 != ''}
+        <br />	
+        <div align="center">
+            <hr />
+				{$INFOTEXT_1}
+			<hr />
+        </div>
+		{/if}
+        <br />	
+		{if $AMAZON_BLOCK} {$AMAZON_BLOCK} {/if}
+        {$FORM_ACTION}
+        <div align="center" style="width:100%;">
+            <div align="left">
+                <div style="float:left; width:150px">
+                    <img src="{$tpl_path}img/checkout_success.gif" alt="Success" />
+                </div>
+                <div style="float:right; width:400px">
+                    <div>{#text_success#}</div>
+                    <br />
+                    <div align="center">
+                        <hr />
+                    </div>
+                    <br />
+                    <div class="contentsTopics">{#title_printorder#}</div><br />
+                    <div>{#text_printorder#}</div><br /><br />
+                    <div align="center">{$BUTTON_PRINT}</div>
+                    <br />
+                    <div align="center">
+                        <hr />
+                    </div>
+                    <br />
+                    <div class="contentsTopics">{#text_thankyou#}</div><br />
+                </div>
+                <br style="clear:both" />
+            </div>
+        </div>
+        {if $GV_SEND_LINK}
+            <!--GV Code Start-->
+                <div>{#gv_has_vouchera#} {$GV_SEND_LINK} {#gv_has_voucherb#}</div>
+            <!--GV Code End-->
+            <br />
+        {/if}
+        <div align="right">{$BUTTON_CONTINUE}</div>
+        <!-- Google Conversion-tracking start !-->
+        {if $google_tracking eq 'true'}
+        {$tracking_code}
+        {/if}
+        <!-- Google Conversion-tracking end !-->
+        {if $downloads_content neq ''}
+          {$downloads_content}
+        {/if}
+        {$FORM_END}
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+{config_load file="lang/$language/lang_$language.conf" section="address_book_process"}
+<div style="display:block;width:100%; text-align:right" class="inputRequirement">{#text_must#}</div>
+<fieldset class="account">
+	<legend><strong>{#title_address#}</strong></legend>
+	<div align="left" style="width:450px;">
+		<div style="float:left">
+			<dl>
+				{if $gender=='1'}<dd>{#text_gender#}</dd>{/if} 
+				<dd>{#text_firstname#}</dd>
+				<dd>{#text_lastname#}</dd>
+				<dd>&nbsp;</dd>
+				{if $company=='1'}<dd>{#text_company#}</dd>{/if}
+				<dd>{#text_street#}</dd>
+				{if $suburb=='1'}<dd>{#text_suburb#}</dd>{/if}
+				<dd>{#text_code#}</dd>
+				<dd>{#text_city#}</dd>
+				{if $state=='1'}<dd>{#text_state#}</dd>{/if}
+				<dd>{#text_country#}</dd>
+				{if $new=='1'}<dd>&nbsp;</dd>{/if}
+			</dl>
+		</div>
+		<div style="float:right">
+			<dl>
+				{if $gender=='1'}<dd>{$INPUT_MALE} | {$INPUT_FEMALE}</dd>{/if} 
+				<dd class="inputRequirement">{$INPUT_FIRSTNAME}</dd>
+				<dd class="inputRequirement">{$INPUT_LASTNAME}</dd>
+				<dd>&nbsp;</dd>
+				{if $company=='1'}<dd class="inputRequirement">{$INPUT_COMPANY}</dd>{/if}
+				<dd class="inputRequirement">{$INPUT_STREET}</dd>
+				{if $suburb=='1'}<dd class="inputRequirement">{$INPUT_SUBURB}</dd>{/if}
+				<dd class="inputRequirement">{$INPUT_CODE}</dd>
+				<dd class="inputRequirement">{$INPUT_CITY}</dd>
+				{if $state=='1'}<dd class="inputRequirement">{$INPUT_STATE}</dd>{/if}
+				<dd class="inputRequirement dropdown">{$SELECT_COUNTRY}</dd>
+				{if $new=='1'}<dd>{$CHECKBOX_PRIMARY} {#text_standard#}</dd>{/if}
+			</dl>
+		</div>
+	</div>
+</fieldset>

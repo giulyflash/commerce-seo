@@ -1,0 +1,29 @@
+{config_load file="lang/$language/lang_$language.conf" section="address_book_process"}
+{if $error}
+	<div class="headerError">{$error}</div>
+{/if}
+<h2>{#heading_address#}</h2>
+	{$FORM_ACTION}
+	{$MODULE_address_book_details}
+	{if $delete=='1'}
+	<b>{#title_delete#}</b>
+	<div style="height: 100px;">
+		<div style="float:left; width:350px;">
+			{#text_delete#}
+		</div>
+		<div style="float:right; width:130px;" class="boxTextBG">
+			{$ADDRESS}
+		</div>
+		<br style="clear:both" />
+	</div>
+	{/if}
+	<div style="width:100%">
+		<div style="float:left; width:49%">
+			{$BUTTON_BACK}
+		</div>
+		<div style="float:right; width:49%" align="right">
+			{$BUTTON_UPDATE}{$BUTTON_DELETE}
+		</div>
+		<br style="clear:both" /><br />
+	</div>
+	{$FORM_END}

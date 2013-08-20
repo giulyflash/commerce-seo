@@ -1,0 +1,73 @@
+input.css_img_button, input.css_wk_img_button, a span.css_img_button, a span.css_wk_img_button {
+display: inline-block;
+margin: 5px 0;
+}
+
+a.css_img_button:link,a.css_img_button:visited,a.css_img_button:active {
+ text-decoration: none; 
+}
+
+a span.css_wk_img_button { 
+text-decoration: none; 
+color: #fff;
+}
+
+/* CSS IMAGE BUTTONS */
+
+input.css_img_button, a span.css_img_button   {
+font-size: 12px;
+font-family: arial;
+font-weight: normal;
+color: #fff;
+padding: 5px 12px !important;
+border-radius: 5px; 
+background: #3b4d60;
+background: -moz-linear-gradient(top, #3b4d60 20%, #222b35 100%); 
+background: -webkit-linear-gradient(top, #3b4d60 20%,#222b35 100%); 
+background: -o-linear-gradient(top, #3b4d60 20%,#222b35 100%); 
+background: -ms-linear-gradient(top, #3b4d60 20%,#222b35 100%); 
+background: linear-gradient(top, #3b4d60 20%,#222b35 100%);
+cursor: pointer;
+border: 1px solid transparent !important;
+}
+
+
+input.css_wk_img_button, a span.css_wk_img_button  {
+color: #fff;
+font-size: 12px;
+font-family: arial;
+font-weight: normal;
+padding: 5px 12px !important;
+border-radius: 5px; 
+background: #489128;
+background: -moz-linear-gradient(top, #489128 0%, #1f6603 100%); 
+background: -webkit-linear-gradient(top, #489128 0%,#1f6603 100%); 
+background: -o-linear-gradient(top, #489128 0%,#1f6603 100%); 
+background: -ms-linear-gradient(top, #489128 0%,#1f6603 100%); 
+background: linear-gradient(top, #489128 0%,#1f6603 100%); /* W3C */
+cursor: pointer;
+border: 1px solid transparent !important;
+}
+
+
+a:hover .css_wk_img_button , a span.css_wk_img_button:hover, input.css_wk_img_button:hover {
+color: #fff;
+background: #3b4d60;
+background: -moz-linear-gradient(top, #3b4d60 20%, #222b35 100%); 
+background: -webkit-linear-gradient(top, #3b4d60 20%,#222b35 100%); 
+background: -o-linear-gradient(top, #3b4d60 20%,#222b35 100%); 
+background: -ms-linear-gradient(top, #3b4d60 20%,#222b35 100%); 
+background: linear-gradient(top, #3b4d60 20%,#222b35 100%);
+border: 1px solid #999 !important;
+}
+
+a:hover .css_img_button, input.css_img_button:hover, .css_img_button:hover {
+color:#333;
+background: #e3e8f0;
+background: -moz-linear-gradient(top, #e3e8f0 20%, #eaeff5 100%); 
+background: -webkit-linear-gradient(top, #e3e8f0 20%,#eaeff5 100%); 
+background: -o-linear-gradient(top, #e3e8f0 20%,#eaeff5 100%); 
+background: -ms-linear-gradient(top, #e3e8f0 20%,#eaeff5 100%); 
+background: linear-gradient(top, #e3e8f0 20%,#eaeff5 100%); /* W3C */
+border: 1px solid #999 !important;
+}

@@ -1,0 +1,45 @@
+{config_load file="lang/$language/lang_$language.conf" section="product_filter"}
+{if $filter_search_items !=''}
+{if $PRODUCTS_PER_SITE || $PRODUCTS_SORTBY || $PRODUCTS_VIEW_AS}
+        <div class="float_wrapper">
+                {$PRODUCTS_PER_SITE} {$PRODUCTS_SORTBY} {$PRODUCTS_VIEW_AS}
+        </div>
+		<br class="clear" />
+{/if}
+	<h3>{#heading_productfilter#}</h3>
+	<form id="filter_terms">
+		
+		<div class="w100p">
+			<div class="left">{$VERBINDER}</div>
+		</div>
+
+		{foreach name=aussen item=module_data from=$filter_search_items}
+			<ul class="product_filter" style="list-style:none">
+				<li><h4>{$module_data.CATEGORIE_TITLE}</h4></li>
+				{foreach name=aussen item=data from=$module_data.ITEMS}
+				<li class="fl w48p">
+					<input type="checkbox" name="filter[]"{if $data.checkbox_checked} checked="" {/if}value="{$data.checkbox_id}" onclick="javascript:searchResults();" /> {$data.text}
+				</li>
+				{/foreach}
+			</ul>
+		{/foreach}
+		<br style="clear:both" /><br />
+	</form>
+{/if}
+<div id="loadingMessage" style="display:none;" class="ac">
+	<img src="images/ajax-loader.gif" alt="Lade..." />
+</div>
+<h2 id="results" class="fwb ac"></h2>
+<div id="filter_result" class="ac">W&auml;hlen Sie die gew&uuml;nschten Kriterien</div>
+{literal}
+<script type="text/javascript">
+	<!--
+	function searchResults() {
+		jQuery('#loadingMessage').show();
+		jQuery('#results').hide();
+		jQuery('#filter_result').hide();
+		xajax_getFilterItems(xajax.getFormValues('filter_terms'));
+	}
+	//-->
+</script>
+{/literal}

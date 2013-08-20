@@ -1,0 +1,49 @@
+{config_load file="lang/$language/lang_$language.conf" section="shopping_cart"}
+<h2>{#heading_cart#}</h2>
+{if $info_message}
+	<div class="headerInfo">{$info_message}</div><br />
+{/if}
+
+{if $error}
+	<div class="headerError">{$error}</div><br />
+{/if}	
+	
+{if $cart_empty==true}
+	{#text_empty#}
+	<div align="right">{$BUTTON_CONTINUE}</div>
+{else}
+	
+	{if $FIRST_NAME || $SECOND_NAME}
+		<h4>{#head_nav1#}</h4>
+		{if $SECOND_NAME}<p>&raquo; <a href="{$SECOND_LINK}">{#nav_back#}<strong>&quot;{$SECOND_NAME}&quot;</strong></a></p>{/if}
+		{if $FIRST_NAME}<p>&raquo; <a href="{$FIRST_LINK}">{#nav_back#}<strong>&quot;{$FIRST_NAME}&quot;</strong></a></p>{/if}
+		<p>&raquo; <a href="{$HOME}">{#nav_back_start#}<strong>&quot;{#nav_start#}&quot;</strong></a></p>
+	{/if}
+
+	{$FORM_ACTION}
+		{$HIDDEN_OPTIONS}
+		{$MODULE_order_details}
+		{if $info_message_1!=''}
+			{$info_message_1}{$min_order}{$info_message_2}{$order_amount}
+		{/if}
+{/if}<br />
+<div style="width:100%">
+	<div style="width:49%; float:left">
+		{$BUTTON_RELOAD} {$BUTTON_BACK}
+	</div>
+	<div style="width:49%; float:right" align="right">
+		{$BUTTON_CHECKOUT}
+		{if $BUTTON_PAYPAL!=''}
+			<br />{#text_or#}<br />{$BUTTON_PAYPAL}<br />
+			{$BUTTON_PAYPAL_TEXT}
+		{/if}
+		
+	</div>		
+	<br style="clear:both" />
+</div>
+{$FORM_END}
+<div style="text-align:right;" id="amazon_checkout_button"></div>
+<br /><hr /><br />
+{$MODULE_gift_cart}
+<br /><hr /><br />
+{$MODULE_cart_specials}

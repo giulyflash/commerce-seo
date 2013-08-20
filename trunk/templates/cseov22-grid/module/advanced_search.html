@@ -1,0 +1,37 @@
+{config_load file="lang/$language/lang_$language.conf" section="advanced_search"}
+{if $error}
+	<div class="headerError">{$error}</div>
+{/if}
+<h2>{#heading_search#}</h2>
+	{$FORM_ACTION}
+	<div align="right">
+		<a href="{$HELP_LINK}" class="shipping"> + {#text_help#}</a>
+	</div>
+	<div align="center">
+			<div align="left" style="float:left">
+				<dl>
+					<dd><strong>{#title_keywords#}</strong></dd>
+					<dd>&nbsp;</dd>
+					<dd><strong>{#text_categories#}</strong></dd>
+					<dd>&nbsp;</dd>
+					<dd><strong>{#text_manufacturer#}</strong></dd>
+					<dd><strong>{#text_min#}</strong></dd>
+					<dd><strong>{#text_max#}</strong></dd>
+				</dl>
+			</div>
+			<div align="left" style="float:right">
+				<dl>
+					<dd><input type="text" name="keywords" style="width:250px" /></dd>
+					<dd>&nbsp;</dd>
+					<dd>{$SELECT_CATEGORIES}</dd>
+					<dd>{$ENTRY_SUBCAT}{#text_subkategories#}</dd>
+					<dd>{$SELECT_MANUFACTURERS}</dd>
+					<dd>{$SELECT_PFROM}</dd>
+					<dd>{$SELECT_PTO}</dd>
+				</dl>
+			</div>
+			<br style="clear:both" />
+	</div>
+	<br />
+	<div align="center">{$BUTTON_SUBMIT}</div>
+	{$FORM_END}

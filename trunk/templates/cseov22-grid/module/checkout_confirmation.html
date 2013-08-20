@@ -1,0 +1,140 @@
+{config_load file="lang/$language/lang_$language.conf" section="checkout_confirmation"}
+{if $error}
+	<div class="headerError">{$error}</div>
+{/if}
+<h2>{#heading_confirmation#}</h2>
+<div align="center">
+	<div class="checkout">
+		<div align="center">
+			<div style="width:100%;">
+				<div style="float:left; width:24.9%">
+					<div class="checkout_line">&nbsp;</div>
+					<div class="checkoutBarTo">{#text_shipping_info#}</div>
+				</div>
+				<div style="float:left; width:24.9%">
+					<div class="checkout_line">&nbsp;</div>
+					<div class="checkoutBarTo">{#text_payment_info#}</div>
+				</div>
+				<div style="float:left; width:24.9%">
+					<div class="checkout_line"><img src="{$tpl_path}img/checkout_bullet.gif" alt="Bullet" /></div>
+					<div class="checkoutBarCurrent">{#text_confirm#}</div>
+				</div>
+				<div style="float:left; width:24.9%">
+					<div class="checkout_line">&nbsp;</div>
+					<div class="checkoutBarTo">{#text_finished#}</div>
+				</div>
+				<br style="clear:both" />
+			</div>
+		</div>
+		<br style="clear:both" />
+		<div align="center">
+			<hr />
+		</div>
+		<br />
+		{if $IP_LOG=='true'}
+		<strong>{#text_ip#}</strong> <span class="inputRequirement"><strong>{$CUSTOMERS_IP}</strong></span>
+		<br />
+			<hr />
+		<br />
+		{/if}
+		<div style="width:100%;">
+			<div style="float:left; width:160px;">
+				<div style="padding:10px; background-color: #F2F2F2; border: 1px solid #ccc; color:#686868">
+					<strong>{#text_shipping_address#}</strong><br /><br />
+					{$DELIVERY_LABEL}<br />
+				</div><br />
+				<div align="center"><a href="{$SHIPPING_ADDRESS_EDIT}">{$BUTTON_EDIT}</a></div>
+			</div>
+			<div style="float:right; width:160px;">
+				<div style="padding:10px; background-color: #F2F2F2; border: 1px solid #ccc; color:#686868">
+					{if $BILLING_LABEL}
+						<strong>{#text_payment_address#}</strong><br /><br />
+						{$BILLING_LABEL}<br />
+					{/if}
+				</div><br />
+				<div align="center"><a href="{$BILLING_ADDRESS_EDIT}">{$BUTTON_EDIT}</a></div>
+			</div>
+			<br style="clear:both" />
+		</div>
+		<br />
+			<hr />
+		<br />
+		{if $SHIPPING_METHOD}
+		<div>
+			<strong>{#text_shipping_method#}</strong><br />
+			{$SHIPPING_METHOD}<br /><br />
+			<a href="{$SHIPPING_EDIT}" class="confirmationEdit">{$BUTTON_EDIT}</a>
+		</div>
+		<br />
+			<hr />
+		<br />
+		{/if}
+		
+		{$CHECKOUT_FORM} 
+		
+		{if $PAYMENT_METHOD!=''}
+		<div>
+			<strong>{#text_payment_method#}</strong><br />{$PAYMENT_METHOD}<br /><br />
+			{if $MODULE_BUTTONS!=''} {$MODULE_BUTTONS}<br /><br />{/if}
+			<a href="{$PAYMENT_EDIT}" class="confirmationEdit">{$BUTTON_EDIT}</a>
+		</div>
+		<br />
+			<hr />
+		<br />
+		{/if}
+		{if $ORDER_COMMENTS!=''}
+		<div>
+			<strong>{#text_comments#}</strong><br />{$ORDER_COMMENTS}<br /><br />
+			<a href="{$PAYMENT_EDIT}" class="confirmationEdit">{$BUTTON_EDIT}</a>
+		</div>
+		<br />
+			<hr />
+		<br />
+		{/if}
+		{if $PAYMENT_INFORMATION!=''}
+		<div align="left">
+			<strong>{#text_payment_info#}</strong><br /><br />
+			{$PAYMENT_INFORMATION}
+		</div>
+		<br />
+			<hr />
+		<br />
+		{/if}
+
+		{if $REVOCATION}
+		<b>{$REVOCATION_TITLE}</b><br />
+		{$REVOCATION}<br />
+		<ul>
+			<li>{$REVOCATION_TITLE}&nbsp;{$REVOCATION_LINK}</li>
+			<li>{$AGB_TITLE}&nbsp;{$AGB_LINK}</li>
+		</ul>
+		<br />
+			<hr />
+		<br />
+		{/if}
+		<strong>{#text_products#}</strong> 
+		<a href="{$PRODUCTS_EDIT}">{$BUTTON_EDIT}</a><br />
+		{$PRODUCTS_BLOCK}
+		
+		{$MODULE_checkout_confirmation_details}<br />
+		
+		<div align="right">
+			{$TOTAL_BLOCK}<br />
+			{$SZI}
+		</div><br />
+
+
+		<div style="width:100%">
+			<div style="float:left; width:50%">
+				&nbsp;
+			</div>
+			<div align="right" style="float:right; width:50%">
+				{$CHECKOUT_BUTTON}
+			</div>
+			<br style="clear:both" />
+		</div>
+		<br />
+		<br />
+	</div>
+</div>
+

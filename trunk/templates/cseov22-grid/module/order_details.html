@@ -1,0 +1,85 @@
+{config_load file="lang/$language/lang_$language.conf" section="shopping_cart"}
+{config_load file="lang/$language/lang_$language.conf" section="product_info"}
+<table>
+	<tr>
+		<th class="w4p fwb al">Pos</th>
+		<th class="w12p fwb">Bild</th>
+		<th class="w44p fwb al">{#text_article#}</th>
+		<th class="w12p ac fwb">{#text_qty#}</th>
+		<th class="w12p ar fwb">{#text_single#}</th>
+		<th class="w12p ar fwb">{#text_total#}</th>
+		<th class="w4p ar fwb">&nbsp;</th>
+	</tr>
+{assign var="z" value=0}
+{foreach name=aussen item=module_data from=$module_content}
+	<tr class="order_details {if $z%2 == 0}dunkel{/if}">
+		<td class="w4p al">
+			{$module_data.PRODUCTS_POS}
+		</td>
+		<td class="w12p ac">
+			{if $module_data.PRODUCTS_IMAGE!=''}<img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.IMAGE_ALT}" />{/if}
+		</td>
+		<td class="w44p al">
+			<strong>
+				<a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a>
+			</strong>
+			{if $module_data.PRODUCTS_SHIPPING_TIME neq ""}
+				<br /><span class="fs85"><em>{#text_shippingtime#} {$module_data.PRODUCTS_SHIPPING_TIME}</em></span>
+			{/if}
+			{if $module_data.ATTRIBUTES!=''}
+				{foreach key=key_data item=item_data from=$module_data.ATTRIBUTES}
+					<table>
+						<tr>
+						<td>
+							<em>{$item_data.NAME}: {$item_data.VALUE_NAME}</em>
+							<em>{$item_data.PREFIX} {$item_data.PRICE}</em>
+						</td>
+						</tr>
+					</table>
+				{/foreach}
+			{/if}
+		</td>
+		<td class="w12p ac">
+			 <a href="{$module_data.MINUS_LINK}" title="{#text_one_remove#}"><img src="{$tpl_path}img/cart_minus.gif"></a> 
+			 {$module_data.PRODUCTS_QTY} 
+			 <a href="{$module_data.PLUS_LINK}" title="{#text_add#}"><img src="{$tpl_path}img/cart_plus.gif"></a>
+		</td>
+		<td class="w12p ar">
+			{$module_data.PRODUCTS_SINGLE_PRICE}
+			{if $module_data.PRODUCTS_VPE}<br />{$module_data.PRODUCTS_VPE}{/if}
+		</td>
+		<td class="w12p ar">
+			{$module_data.PRODUCTS_PRICE}
+		</td>
+		<td class="w4p ar">
+			<a href="{$module_data.DEL_LINK}" title="{#text_remove#}"><img src="{$tpl_path}img/cart_delete.gif"></a>
+		</td>
+
+	</tr>
+{assign var="z" value="`$z+1`"}
+{/foreach}
+</table>
+<br style="clear:both" />
+<div class="order_details_totalcost">
+<table>
+<tr>
+ <td>
+ {if $SELECT_COUNTRY}{#text_country#} {$SELECT_COUNTRY}{/if}<br />
+ </td>
+ </tr>
+ <tr>
+ <td>
+ {$TOTAL_CONTENT_NETTO}
+ {if $UST_CONTENT}{$UST_CONTENT}{/if}
+  <u>{$TOTAL_CONTENT}</u><br />
+ {foreach name=aussen item=shipping_data from=$shipping_content}
+ {$shipping_data.NAME} ({$COUNTRY}): {$shipping_data.VALUE}<br />
+ {/foreach}
+ {if $total}
+ <strong>{#text_total#}: {$total}</strong>
+ {/if}
+ </td>
+ </tr>
+ </table>
+	
+</div>

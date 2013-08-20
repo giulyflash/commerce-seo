@@ -1,0 +1,52 @@
+{config_load file="lang/$language/lang_$language.conf" section="shopping_cart"} 
+<p align="center"><strong>{$HEAD_INFO}</strong></p>
+<table>
+	<tr>
+		<th class="w14p ac">&nbsp;</th>
+		<th class="w15p ac">{#text_qty#}</th>
+		<th class="w34p al">{#text_article#}</th>
+		<th class="w18p al">{#text_total#}</th>
+		<th class="w14p ac">{#text_remove#}</th>
+	</tr>
+{assign var="z" value=0}
+{foreach name=aussen item=module_data from=$module_content}
+	{$module_data.FORM_WISHLIST}
+	<tr class="order_details {if $z%2 == 0}dunkel{/if}">
+		<td class="w14p ac">
+			{if $module_data.PRODUCTS_IMAGE!=''}
+				<img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.IMAGE_ALT}" />
+			{/if}
+		</td>
+		<td class="w15p ac">
+			<a href="{$module_data.PRODUCTS_MINUS}"><img src="{$tpl_path}img/cart_minus.gif"></a>
+			{$module_data.PRODUCTS_QTY}
+			<a href="{$module_data.PRODUCTS_PLUS}"><img src="{$tpl_path}img/cart_plus.gif"></a>
+		</td>
+		<td class="w34p al">
+			<strong>
+				<a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a>
+			</strong><br />
+			{if $module_data.PRODUCTS_SHIPPING_TIME neq ""}
+				<br />{$module_data.PRODUCTS_SHIPPING_TIME}<br /><br />
+			{/if}
+			{if $module_data.ATTRIBUTES!=''}
+			  	{foreach key=key_data item=item_data from=$module_data.ATTRIBUTES} 
+					<span class="fs85">{$item_data.NAME}: <em>{$item_data.VALUE_NAME} {$item_data.PREFIX}{$item_data.PRICE}</em></span><br />
+				{/foreach}
+			{/if}
+		</td>		
+		<td class="w18p al">
+			{$module_data.PRODUCTS_PRICE} <strong class="inputRequirement">*</strong><br />
+			{if $module_data.PRODUCTS_VPE !=''}<em>{#text_vpe#}<br />{$module_data.PRODUCTS_VPE}</em><br />{/if}
+			{if $module_data.PRODUCTS_WEIGHT !=0}<em>{#weight#} {$module_data.PRODUCTS_WEIGHT}</em><br />{/if}
+			{$module_data.BUY_NOW}
+		</td>
+		<td class="w14p ac">
+			<a href="{$module_data.PRODUCTS_DELETE}"><img src="{$tpl_path}img/cart_delete.gif"></a>
+		</td>
+	</tr>
+	</form>
+{assign var="z" value="`$z+1`"}
+{/foreach}
+</table>
+<br style="clear:both" /><br />

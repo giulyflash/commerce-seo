@@ -1,0 +1,73 @@
+{foreach name=aussen item=cross_data from=$module_content}
+	<h2>{$cross_data.GROUP}</h2>
+		{foreach item=module_data from=$cross_data.PRODUCTS}
+			<div class="gridlist_{$module_data.COL_WIDTH} b1">
+				{if $module_data.PRODUCTS_NEW == 'true' && $module_data.PRODUCTS_TOP != 'true'}
+					<em class="new_product"></em>
+				{elseif $module_data.PRODUCTS_TOP == 'true'}
+					<em class="top_product"></em>
+				{/if}
+				{if $module_data.PRODUCTS_NAME}
+					{if $module_data.PRODUCTS_PROXIMITY !=''}
+						<div class="ac" style="background-color:{$module_data.PRODUCTS_PROXIMITY_COLOR}">
+							{#text_proximity#}{$module_data.PRODUCTS_PROXIMITY}
+						</div>
+					{/if}
+					<h3>
+						{if $module_data.PRODUCTS_REVIEWS}<div class="fr product_listing_gallery_review">{$module_data.PRODUCTS_REVIEWS}</div>{/if}
+						<a href="{$module_data.PRODUCTS_LINK}" title="{$module_data.PRODUCTS_NAME_ALT}">
+							{$module_data.PRODUCTS_NAME}
+						</a>
+					</h3>
+				{/if}
+
+				{if $module_data.COL_WIDTH == 'w98p'}
+					<div class="gridlist_w223p">
+				{else}
+					<div class="plgimage ac">
+				{/if}
+					<a href="{$module_data.PRODUCTS_LINK}" title="{$module_data.PRODUCTS_IMAGE_ALT}">
+						<img src="{$module_data.PRODUCTS_IMAGE}" {$module_data.PRODUCTS_IMAGE_DIMENSION} alt="{$module_data.PRODUCTS_IMAGE_ALT}" title="{$module_data.PRODUCTS_IMAGE_ALT}" />
+					</a>
+				</div>
+
+				{if $module_data.PRODUCTS_DESCRIPTION || $module_data.PRODUCTS_MANUFACTURER_IMG || $module_data.PRODUCTS_MANUFACTURER_NAME}
+					{if $module_data.COL_WIDTH == 'w98p'}
+						<div class="gridlist_w474p">
+					{else}
+						<div class="plgdetail ac">
+					{/if}
+						{$module_data.PRODUCTS_DESCRIPTION}
+						{if $module_data.PRODUCTS_MANUFACTURER_IMG || $module_data.PRODUCTS_MANUFACTURER_NAME}
+							{if $module_data.PRODUCTS_MANUFACTURER_URL}
+								<a href="{$module_data.PRODUCTS_MANUFACTURER_URL}" target="_blank" title="{$module_data.PRODUCTS_MANUFACTURER_NAME}">{/if}
+							{if $module_data.PRODUCTS_MANUFACTURER_IMG}
+									<img title="{if $module_data.PRODUCTS_MANUFACTURERS_DESCRIPTION != ''}{$module_data.PRODUCTS_MANUFACTURERS_DESCRIPTION}{else}{$module_data.PRODUCTS_MANUFACTURER_NAME}{/if}" src="{$module_data.PRODUCTS_MANUFACTURER_IMG}" alt="{$module_data.PRODUCTS_MANUFACTURER_NAME}" /><br />
+							{/if}
+								{$module_data.PRODUCTS_MANUFACTURER_NAME}
+							{if $module_data.PRODUCTS_MANUFACTURER_URL}</a>{/if}
+						{/if}
+					</div>
+				{/if}
+				{if $module_data.CATEGORIES_NAME}
+					<div class="ac">
+						{#text_category#}<a href="{$module_data.CATEGORIES_LINK}">{$module_data.CATEGORIES_NAME}</a><br />
+					</div>
+				{/if}
+				{if $module_data.COL_WIDTH == 'w98p'}
+					<div class="gridlist_w223p ac">
+				{else}
+					<div class="plgprice ac">
+				{/if}
+					{if $module_data.PRODUCTS_STOCK_IMG}<span class="fs85">{#text_stock#} {$module_data.PRODUCTS_STOCK_IMG}</span>{/if}
+					{if $module_data.PRODUCTS_PRICE}<div class="plprice">{$module_data.PRODUCTS_PRICE}</div>
+					{if $module_data.PRODUCTS_VPE}<span class="fs85">{#text_vpe#} {$module_data.PRODUCTS_VPE}</span><br />{/if}
+					{if $module_data.PRODUCTS_MODEL}<span class="fs85">{#text_model#} {$module_data.PRODUCTS_MODEL}</span><br />{/if}
+					{if $module_data.PRODUCTS_WEIGHT !=0}<span class="fs85">{#text_weight#} {$module_data.PRODUCTS_WEIGHT}</span><br />{/if}
+					<span class="fs85">{$module_data.PRODUCTS_TAX_INFO}{$module_data.PRODUCTS_SHIPPING_LINK}</span><br />{/if}
+					{$module_data.PRODUCTS_BUTTON_DETAILS} {$module_data.PRODUCTS_BUTTON_BUY_NOW} {$module_data.PRODUCTS_BUTTON_WISHLIST}
+				</div>
+			</div>
+		{/foreach}
+	<br class="clear" />
+{/foreach}

@@ -1,0 +1,11 @@
+{if $BOX_CONTENT}
+<div class="box box_{$box_name}">
+<h4 class="name_{$box_name}">{box_name name=$box_name class=$box_name}</h4>
+	<div class="boxcontent boxcontent_{$box_name}">
+	{$BOX_CONTENT}
+{if $link}<br /><a href="{$link}">{#text_more#}</a>{/if}
+</div>
+</div>
+{else}
+<h4 class="name_{$box_name}">{box_name name=$box_name class=$box_name}</h4>
+{/if}

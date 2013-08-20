@@ -1,0 +1,20 @@
+{config_load file="lang/$language/lang_$language.conf" section="product_navigator"}
+{if $FIRST !='' || $PREVIOUS !='' || $NEXT!='' || $LAST!=''}
+	<div class="product_navigator fs85">
+		{if $FIRST!='' || $PREVIOUS!=''}
+			<div class="product_navigator_left left">
+				{if $FIRST!=''}<span class="navigation first"><a href="{$FIRST}">{#first#}</a></span>{/if}
+				{if $PREVIOUS!=''} <span class="navigation previous"><a href="{$PREVIOUS}">{#back#}</a></span>{/if}
+			</div>
+		{/if}
+		{if $NEXT!='' || $LAST!=''}
+			<div class="product_navigator_right right">
+				{if $NEXT!=''}<span class="navigation next"><a href="{$NEXT}">{#next#}</a></span>{/if}
+				{if $LAST!=''} <span class="navigation last"><a href="{$LAST}">{#last#}</a></span>{/if}
+			</div>
+		{/if}
+		<div class="product_navigator_center">
+			{#total#} <strong>{$ACTUAL_PRODUCT} von {$PRODUCTS_COUNT}</strong> {#total2#}
+		</div>
+	</div>
+{/if}
